@@ -7,10 +7,10 @@ func main() {
 	fmt.Println(checkIfExist(arr))
 }
 
-func checkIfExist(arr []int) bool {
-	hash :=map[int]int{}
+func checkIfExist(arr []int)bool{
+	hash:=map[int]int{}
 	for i:=range arr{
-		if hash[i]%2==0{
+		if arr[i]%2==0{
 			hash[arr[i]]=i
 		}
 	}
@@ -18,7 +18,7 @@ func checkIfExist(arr []int) bool {
 		return false
 	}
 	for i:=range arr{
-		temp,ok:=hash[arr[i]*2]
+		temp, ok:=hash[arr[i]*2]
 		if ok&&temp!=i{
 			return true
 		}
