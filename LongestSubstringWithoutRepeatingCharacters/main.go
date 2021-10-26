@@ -25,9 +25,9 @@ func main() {
 // }
 
 func lengthLongestSubstring(s string)int{
-	hash :=make(map[rune]int, len(s))
+	hash:=make(map[rune]int, len(s))
 	start, maxLen:=0,0
-	for i,char:=range s{
+	for i, char:=range s{
 		if lastI,ok:=hash[char]; ok&&lastI>=start{
 			start = lastI+1
 		}
@@ -35,6 +35,6 @@ func lengthLongestSubstring(s string)int{
 			maxLen= i-start+1
 		}
 		hash[char]=i
-	} 
+	}
 	return maxLen
 }
