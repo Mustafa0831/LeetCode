@@ -36,15 +36,15 @@ func letterCombinations(digits string) []string {
 	if digits == "" {
 		return nil
 	}
-	strs:=make([]string,0)
-	strs= append(strs, getDigits[digits[0]-'2']...)
+	strs := make([]string, 0)
+	strs = append(strs, getDigits[digits[0]-'2']...)
 	for _, digit:=range digits[1:]{
 		str:= getDigits[digit-'2']
-		temp:= make([]string,len(str))
-		copy(temp,strs)
-		strs= []string{}
+		temp:=make([]string, len(strs))
+		copy(temp, strs)
+		strs=[]string{}
 		for _, s:=range str{
-			for _, t:=range temp{
+			for _, t :=range temp{
 				t+=s
 				strs=append(strs, t)
 			}
